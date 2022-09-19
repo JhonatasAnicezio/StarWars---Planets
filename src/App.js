@@ -1,8 +1,9 @@
 import React from 'react';
+import Table from './components/Table';
 
 function App() {
   return (
-    <h1>StarWars</h1>
+    <Table />
   );
 }
 
