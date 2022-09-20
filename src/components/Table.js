@@ -7,14 +7,24 @@ function Table() {
 
   return (
     <table>
+      <thead>
+        <tr>
+          { data.length && Object.keys(data[0])
+            .map((keyName, index) =>
+              <th key={ index }>
+                { keyName }
+              </th>
+            )}
+        </tr>
+      </thead>
       <tbody>
         { data.map((planet, index) => {
-          const keys = Object.values(planet);
+          const values = Object.values(planet);
           return (
             <tr key={ index }>
-              { keys.map((key, index) =>
+              { values.map((value, index) =>
                 <td key={ index }>
-                  { key }
+                  { value }
                 </td>
               ) }
             </tr>
