@@ -4,7 +4,9 @@ function Table() {
   return (
     <table>
       <tbody>
-        <td>Tabela</td>
+        <tr>
+          <td>Tabela</td>
+        </tr>
       </tbody>
     </table>
   );
