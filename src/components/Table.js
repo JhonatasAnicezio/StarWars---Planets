@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import PlanetsContext from '../context/PlanetsContext';
 
 function Table() {
+
+  const { data } = useContext(PlanetsContext);
+
   return (
     <table>
       <tbody>
-        <tr>
-          <td>Tabela</td>
-        </tr>
+        { data.map((planet, index) => {
+          const keys = Object.values(planet);
+          return (
+            <tr key={ index }>
+              { keys.map((key, index) =>
+                <td key={ index }>
+                  { key }
+                </td>
+              ) }
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
