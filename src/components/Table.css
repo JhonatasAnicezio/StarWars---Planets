@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #333131;
+}
+
+thead {
+  width: 90%;
+  background-color: #222121;
+}
+
+thead th {
+  height: 60px;
+}
