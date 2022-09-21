@@ -6,7 +6,7 @@ function Title({ title }) {
     <div>
       <h1>{ title }</h1>
     </div>
-  )
+  );
 }
 
 Title.propTypes = {
