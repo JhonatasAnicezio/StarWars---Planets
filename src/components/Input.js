@@ -1,27 +1,33 @@
-import React, { useContext } from 'react';
-import PlanetsContext from '../context/PlanetsContext';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function Input() {
-  const { setFilterByName } = useContext(PlanetsContext);
+function Input({ text, type, name, func }) {
 
   const handleOnChange = ({ target }) => {
     const { value } = target;
-    setFilterByName({ name: value });
+    func({ name: value });
   };
 
   return (
     <div>
-      <label htmlFor='search-name'>
-        Procure por um planeta
+      <label htmlFor={ name }>
+        { text }
       </label>
       <input
-        type='text'
-        id='search-name'
-        name='search-name'
+        type={ type }
+        id={ name }
+        name={ name }
         onChange={ handleOnChange }
       />
     </div>
   );
 }
+
+Input.propTypes = {
+  text: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  func: PropTypes.func.isRequired,
+};
 
 export default Input;
