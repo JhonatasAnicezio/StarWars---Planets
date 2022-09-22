@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Input({ text, type, name, func }) {
+function Input({ text, type, name, func, input }) {
 
   const handleOnChange = ({ target }) => {
     const { value } = target;
-    func({ name: value });
+    func({ [input]: value });
   };
 
   return (
@@ -28,6 +28,7 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   func: PropTypes.func.isRequired,
+  input: PropTypes.string.isRequired,
 };
 
 export default Input;
