@@ -15,6 +15,7 @@ function App() {
         type='text'
         name='search-name'
         func={ setFilterByName }
+        input='name'
       />
       <Table />
     </div>
