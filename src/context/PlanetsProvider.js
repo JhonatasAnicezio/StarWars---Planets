@@ -30,7 +30,7 @@ function PlanetsProvider({ children }) {
   const context = {
     data,
     setData,
-    filter,
+    filterByName,
     setFilterByName,
   };
 
