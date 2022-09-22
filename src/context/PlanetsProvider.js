@@ -19,13 +19,19 @@ function PlanetsProvider({ children }) {
           delete obj.residents;
           return obj;
         });
-        setData(results);
+        setData(results.filter((result) => {
+          const { name } = filterByName;
+          const str = result.name.toLowerCase();
+          return str.includes(name);
+        }));
       });
-  }, []);
+  }, [filterByName]);
 
   const context = {
     data,
     setData,
+    filter,
+    setFilterByName,
   };
 
   return (
