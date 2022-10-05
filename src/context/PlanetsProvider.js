@@ -7,7 +7,14 @@ function PlanetsProvider({ children }) {
   const [ filter, setFilter ] = useState({
     filterByName: {
       name: '',
-    }
+    },
+    filterByNumericValues: [
+      {
+        column: '',
+        comparison: '',
+        value: '',
+      }
+    ]
   });
 
   useEffect(() => {
