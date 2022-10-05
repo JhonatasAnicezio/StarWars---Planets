@@ -1,0 +1,22 @@
+.container-Table {
+  overflow: scroll;
+  height: 70vh;
+}
+
+table {
+  height: 100%;
+  width: 100%;
+}
+
+thead {
+  font-style: normal;
+}
+
+thead th {
+  padding: 3vh;
+  background-color: #252323;
+}
+
+tbody td {
+  border-bottom: solid 1px #646161;
+}
