@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
+import './Button.css';
 
 function Button() {
   const { column, comparison, value, setFilter, filter } = useContext(PlanetsContext);
@@ -16,7 +17,6 @@ function Button() {
         }
       ]
     });
-    console.log(filter);
   }
 
   return (
@@ -24,7 +24,7 @@ function Button() {
       type='button'
       onClick={ addFilters }
     >
-      Filtrar
+      FILTRAR
     </button>
   );
 }
