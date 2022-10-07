@@ -3,5 +3,14 @@
   border-radius: 0.5vh;
   background-color: transparent;
   color: #FFFFFF;
-  border: solid 2px #646161;
+  border: solid 0.3vh #646161;
+}
+
+.input-Number {
+  height: 3vh;
+  width: 8vh;
+  border-radius: 0.5vh;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: solid 0.3vh #646161;
 }
