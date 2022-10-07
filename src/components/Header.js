@@ -6,6 +6,7 @@ import PlanetsContext from '../context/PlanetsContext.js';
 
 function Header() {
   const { setFilter, filter } = useContext(PlanetsContext);
+  const { filterByName } = filter;
 
   const inputName = ( value ) => {
     setFilter({ 
@@ -23,6 +24,7 @@ function Header() {
         <Input
           className='input-Name'
           type='text'
+          value={ filterByName.name }
           name='filterName'
           func={ inputName }
         />
