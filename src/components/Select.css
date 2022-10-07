@@ -1,0 +1,22 @@
+.container-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-size: 2vh;
+  color: #aaaaaa;
+}
+
+select {
+  font-size: 2vh;
+  width: 15vh;
+
+  color: #FFFFFF;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 0.2vh #646161;
+}
+
+select option {
+  background-color: grey;
+}
