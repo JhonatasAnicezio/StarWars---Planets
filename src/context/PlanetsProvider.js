@@ -4,17 +4,14 @@ import PropTypes from 'prop-types';
 
 function PlanetsProvider({ children }) {
   const [ planets, setPlanets ] = useState([]);
+  const [ column, setColumn ] = useState('population');
+  const [ comparison, setComparison ] = useState('maior que');
+  const [ value, setValue ] = useState('');
   const [ filter, setFilter ] = useState({
     filterByName: {
       name: '',
     },
-    filterByNumericValues: [
-      {
-        column: '',
-        comparison: '',
-        value: '',
-      }
-    ]
+    filterByNumericValues: [],
   });
 
   useEffect(() => {
@@ -35,8 +32,15 @@ function PlanetsProvider({ children }) {
   }, [filter]);
 
   const context = {
+    column,
+    setColumn,
+    comparison,
+    setComparison,
+    value,
+    setValue,
     planets,
     setFilter,
+    filter,
   };
 
   return (
