@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Input from './Input.js';
 import './Header.css';
+import ListFilters from './ListFilters.js';
 import PlanetsContext from '../context/PlanetsContext.js';
 
 function Header() {
@@ -26,6 +27,7 @@ function Header() {
           func={ inputName }
         />
       </div>
+      <ListFilters />
     </header>
   );
 }
