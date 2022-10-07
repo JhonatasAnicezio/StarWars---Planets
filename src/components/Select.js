@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Select.css';
 
-function Select({ text, name, func, value, options }) {
+function Select({ text, name, options, func }) {
 
   const handleOnChange = ({ target }) => {
     const { value } = target;
-    func( value );
+    func(value);
   };
 
   return (
-    <div>
+    <div className='container-select'>
       <label>{ text }</label>
-      <select name={ name } id={ value } onChange={ handleOnChange }>
+      <select name={ name } id={ name } onChange={ handleOnChange }>
         {options.map((opt, index) =>
           <option
             name={ opt }
@@ -28,9 +29,8 @@ function Select({ text, name, func, value, options }) {
 Select.propTypes = {
   text: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  func: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  func: PropTypes.func.isRequired,
 };
 
 export default Select;
