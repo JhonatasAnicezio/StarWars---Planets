@@ -6,7 +6,7 @@ function PlanetsProvider({ children }) {
   const [ planets, setPlanets ] = useState([]);
   const [ column, setColumn ] = useState('population');
   const [ comparison, setComparison ] = useState('maior que');
-  const [ value, setValue ] = useState('');
+  const [ value, setValue ] = useState(0);
   const [ filter, setFilter ] = useState({
     filterByName: {
       name: '',
