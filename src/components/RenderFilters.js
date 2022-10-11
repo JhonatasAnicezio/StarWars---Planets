@@ -1,18 +1,37 @@
 import React, { useContext } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
+import './RenderFilters.css';
 
 function RenderFilters() {
+
   const { filter: {
     filterByNumericValues: filterNumeric
-  } } = useContext(PlanetsContext);
+  }, setFilter, filter } = useContext(PlanetsContext);
+
+  const removeFilter = (parameter) => {
+    const newArray = filterNumeric;
+    newArray.splice(filterNumeric.indexOf(parameter), 1);
+    setFilter({
+      ...filter,
+      filterByNumericValues: newArray,
+    });
+  };
+
   return (
-    <div>
-      <ul>
-        { filterNumeric.map((filters, index) => {
-          const { column, comparison, value } = filters;
+    <div className='container-renderFilters'>
+      <ul className='ul-filters'>
+        { filterNumeric.map((filter, index) => {
+          const { column, comparison, value } = filter;
           return (
-            <li key={ index }>
+            <li key={ index } className='li-filters'>
               {`${column} ${comparison} ${value}`}
+              <button
+                className='button-filters'
+                type='button'
+                onClick={ () => removeFilter(filter)}
+              >
+                X
+              </button>
             </li>
           );
         }) }
