@@ -19,15 +19,36 @@ function PlanetsProvider({ children }) {
     fetch(url).then((response) => response.json())
       .then((response) => {
         const { results } = response;
-        const { name } = filter.filterByName;
+        const { filterByName: { name },
+          filterByNumericValues: filterNumeric } = filter;
         results.map((obj) => {
           delete obj.residents;
           return obj;
         });
-        setPlanets(results.filter((planet) => {
+
+        const filterName = results.filter((planet) => {
           const str = planet.name.toLowerCase();
           return str.includes(name);
-        } ));
+        });
+
+        const filterNumber = filterName.filter((planet) => {
+          return filterNumeric.every((filt) => {
+            switch (filt.comparison) {
+            case 'maior que':
+              return planet[filt.column] > filt.value;
+            case 'menor que':
+              return planet[filt.column] < filt.value;
+            case 'igual a':
+              return planet[filt.column] == filt.value;
+            }
+          });
+        });
+
+        if(filterNumeric.length == 0) {
+          setPlanets(filterName);
+        } if(filterNumeric.length > 0) {
+          setPlanets(filterNumber);
+        }
       });
   }, [filter]);
 
