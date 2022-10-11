@@ -3,6 +3,7 @@ import Input from './Input.js';
 import './Header.css';
 import ListFilters from './ListFilters.js';
 import PlanetsContext from '../context/PlanetsContext.js';
+import RenderFilters from './RenderFilters.js';
 
 function Header() {
   const { setFilter, filter } = useContext(PlanetsContext);
@@ -30,6 +31,7 @@ function Header() {
         />
       </div>
       <ListFilters />
+      <RenderFilters />
     </header>
   );
 }
