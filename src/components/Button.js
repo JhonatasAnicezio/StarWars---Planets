@@ -21,6 +21,7 @@ function Button() {
 
   return (
     <button
+      className='main-button'
       type='button'
       onClick={ addFilters }
     >
