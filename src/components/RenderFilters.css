@@ -1,0 +1,16 @@
+.ul-filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.li-filters {
+  font-size: 1.5vh;
+  border-radius: 2vh;
+  margin-right: 0.5vh;
+  background-color: #5f5f5f;
+}
+
+.button-filters {
+  background-color: transparent;
+  border: none;
+}
