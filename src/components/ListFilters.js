@@ -6,8 +6,8 @@ import Select from './Select';
 import './ListFilters.css';
 
 function ListFilters() {
-  const { setColumn, setComparison, setValue,
-    value, columnArr } = useContext(PlanetsContext);
+  const { setColumn, setComparison, setValue, value, columnArr,
+    arrOpt, setColumnOrder } = useContext(PlanetsContext);
   const operatorArr = [ 'maior que', 'menor que', 'igual a'];
 
   return (
@@ -32,6 +32,12 @@ function ListFilters() {
         func={ setValue }
       />
       <Button />
+      <Select
+        text='Ordenar'
+        name='order'
+        options={ arrOpt }
+        func={ setColumnOrder }
+      />
     </div>
   );
 }
