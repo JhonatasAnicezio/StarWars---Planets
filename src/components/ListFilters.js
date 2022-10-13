@@ -6,9 +6,8 @@ import Select from './Select';
 import './ListFilters.css';
 
 function ListFilters() {
-  const { setColumn, setComparison, setValue, value } = useContext(PlanetsContext);
-  const columnArr = ['population', 'orbital_period',
-    'diameter','rotation_period', 'surface_water'];
+  const { setColumn, setComparison, setValue,
+    value, columnArr } = useContext(PlanetsContext);
   const operatorArr = [ 'maior que', 'menor que', 'igual a'];
 
   return (
