@@ -6,6 +6,7 @@ function PlanetsProvider({ children }) {
   const arrOpt = ['population', 'orbital_period', 'diameter',
     'rotation_period', 'surface_water'];
 
+  const [ inputOrder, setInputOrder ] = useState('');
   const [ columnOrder, setColumnOrder ] = useState('population');
   const [ columnArr, setColumnArr ] = useState(arrOpt);
   const [ planets, setPlanets ] = useState([]);
@@ -59,7 +60,7 @@ function PlanetsProvider({ children }) {
 
   const context = { column, setColumn, comparison, setComparison, value,
     setValue, planets, setFilter, filter, columnArr, setColumnArr, arrOpt,
-    columnOrder, setColumnOrder,
+    columnOrder, setColumnOrder, inputOrder, setInputOrder,
   };
 
   return (
