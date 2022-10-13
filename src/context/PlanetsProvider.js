@@ -3,8 +3,10 @@ import PlanetsContext from './PlanetsContext';
 import PropTypes from 'prop-types';
 
 function PlanetsProvider({ children }) {
-  const [ columnArr, setColumnArr ] = useState(['population',
-    'orbital_period', 'diameter','rotation_period', 'surface_water']);
+  const arrOpt = ['population', 'orbital_period', 'diameter',
+    'rotation_period', 'surface_water'];
+
+  const [ columnArr, setColumnArr ] = useState(arrOpt);
   const [ planets, setPlanets ] = useState([]);
   const [ column, setColumn ] = useState('population');
   const [ comparison, setComparison ] = useState('maior que');
@@ -65,7 +67,8 @@ function PlanetsProvider({ children }) {
     setFilter,
     filter,
     columnArr,
-    setColumnArr
+    setColumnArr,
+    arrOpt,
   };
 
   return (
