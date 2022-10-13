@@ -4,6 +4,7 @@ import Button from './Button';
 import Input from './Input';
 import Select from './Select';
 import './ListFilters.css';
+import InputRadio from './InputRadio';
 
 function ListFilters() {
   const { setColumn, setComparison, setValue, value, columnArr,
@@ -38,6 +39,7 @@ function ListFilters() {
         options={ arrOpt }
         func={ setColumnOrder }
       />
+      <InputRadio />
     </div>
   );
 }
