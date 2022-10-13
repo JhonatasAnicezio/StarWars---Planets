@@ -4,9 +4,8 @@ import './RenderFilters.css';
 
 function RenderFilters() {
 
-  const { filter: {
-    filterByNumericValues: filterNumeric
-  }, setFilter, filter } = useContext(PlanetsContext);
+  const { filter: { filterByNumericValues: filterNumeric }, setFilter,
+    filter, setColumnArr, columnArr, setColumn } = useContext(PlanetsContext);
 
   const removeFilter = (parameter) => {
     const newArray = filterNumeric;
@@ -15,6 +14,8 @@ function RenderFilters() {
       ...filter,
       filterByNumericValues: newArray,
     });
+    setColumnArr([parameter.column, ...columnArr]);
+    setColumn(parameter.column);
   };
 
   return (
