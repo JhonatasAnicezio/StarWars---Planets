@@ -1,6 +1,7 @@
 <h1>Projeto StarWars Planets</h1>
 <p> Este projeto consiste em uma lista com filtros de planetas do universo de Star Wars usando Context API e Hooks para controlar os estados globais.</p>
-
+<img src='./public/project.png' />
+<br><br>
 <h1>Tecnologias utilizadas:</h1>
 <ul>
   <li>JavaScript</li>
